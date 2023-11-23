@@ -9,7 +9,8 @@ export class ComicserviceService {
 
     search=new BehaviorSubject("")
 
-    baseUrl='http://localhost:3009'
+    // baseUrl='http://localhost:3009'
+    baseUrl='https://triad-server.onrender.com'
 
   constructor(private http:HttpClient) { }
 
