@@ -1,0 +1,83 @@
+<div *ngIf="isloggedin(); else loggedout">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+    <div class="container px-5">
+        <a class="navbar-brand" href="#!"> <img style="height: 40%; width:40%;" src="https://i.postimg.cc/FHLtKNLx/triad-comics.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">HOME</a></li>
+                <li class="nav-item"><a class="nav-link" href="#comic">COMICS</a></li>
+                <li class="nav-item"><a class="nav-link" href="#exampleModal" data-bs-toggle="modal">ABOUT</a></li>
+            </ul>
+            <h1 style="color: black;">/</h1>
+            <div>
+              <p></p>
+            </div>
+            <!-- <h1 style="color: black;">/</h1> -->
+            <div style="font-size: 130%;">
+              <button style="border-radius: 50%;" (click)="logout()" ><i class="fa-solid fa-power-off" style="color: #171717;"></i></button>
+            </div>
+            <h1 style="color: black;">/</h1>            
+            <a routerLink="admin-login"><i class="fa-solid fa-2x fa-gear" style="color: #eceff4;"></i></a>
+        </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel"> ABOUT US </h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <form class="text-center">
+                    <p> The Website is handled and maintained by A.Deva Nandan. </p>
+                    <p> Email : adevanandan18@gmail.com </p>
+                    <p> Contact : +91 8590763183 </p>
+                    <p> For more details and information contact us. </p>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</nav>
+</div>
+
+<ng-template #loggedout>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+    <div class="container px-5">
+      <a class="navbar-brand" href="#!"> <img style="height: 40%; width:40%;" src="https://i.postimg.cc/FHLtKNLx/triad-comics.png" alt=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">HOME</a></li>
+                <li class="nav-item"><a class="nav-link" href="#comic">COMICS</a></li>
+                <li class="nav-item"><a class="nav-link" href="#exampleModal" data-bs-toggle="modal">ABOUT</a></li>
+            </ul>
+            <h1 style="color: black;">/</h1>
+            <button routerLink="user-login" style="border-radius: 50%;"><i class="fa-solid fa-2x fa-user-astronaut" style="color: #131313;"></i></button>
+            <h1 style="color: black;">/</h1>            
+            <a routerLink="admin-login"><i class="fa-solid fa-2x fa-gear" style="color: #eceff4;"></i></a>
+        </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel"> ABOUT US </h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <form class="text-center">
+                    <p> The Website is handled and maintained by A.Deva Nandan. </p>
+                    <p> Email : adevanandan18@gmail.com </p>
+                    <p> Contact : +91 8590763183 </p>
+                    <p> For more details and information contact us. </p>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</nav>
+</ng-template>

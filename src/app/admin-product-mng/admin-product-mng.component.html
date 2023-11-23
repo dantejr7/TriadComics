@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+  <div class="container px-5">
+    <a class="navbar-brand" href="#!"> <img style="height: 40%; width:40%;" src="https://i.postimg.cc/FHLtKNLx/triad-comics.png" alt=""></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item"><a class="nav-link active" aria-current="page" href="./admin-home">HOME</a></li>
+              <li class="nav-item"><a class="nav-link" href="#!">COMICS</a></li>
+              <li class="nav-item"><a class="nav-link" href="#!">ABOUT</a></li>
+          </ul>
+          <h1 style="color: black;">/</h1>
+          <a routerLink="admin-login"><i class="fa-solid fa-2x fa-gear" style="color: #eceff4;"></i></a>
+      </div>
+  </div>
+</nav>
+
+
+<div style="background-image: url(https://i.postimg.cc/3JjHBXDj/sucker-punch-samurai-wallpaper-1920x1080.jpg); background-size: cover;">
+  <div class="text-center  p-5">
+    <h1> P R O D U C T - M A N A G E M E N T </h1> <br>
+    <div class="text-end">
+      <button (click)="addPage()" class="btn btn-dark p-2 ms-5"> Add New Comics </button>
+    </div>
+    <table class="table table-stripped-columns table-dark mt-5 p-5">
+        <thead>
+          <tr>
+            <th class="border p-3" scope="col">Sl No.</th>
+            <th class="border p-3" scope="col">Comic Name</th>
+            <th class="border p-3" scope="col">First Page</th>
+            <th class="border p-3" scope="col">Second Page</th>
+            <th class="border p-3" scope="col">Third Page</th>
+            <th class="border p-3" scope="col">Rating</th>
+            <th class="border p-3" scope="col"><i class="fa-solid fa-screwdriver-wrench" style="color: #f3f4f7;"></i></th>
+ 
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let i of pdata,let j=index">
+            <td class="border p-3">{{j+1}}</td>
+            <td class="border p-3">{{i.pname}}</td>
+            <td class="border p-3">
+              <img style="height: 200px;" src={{i.pagea}} alt="">
+            </td>
+            <td class="border p-3">
+              <img style="height: 200px;" src={{i.pageb}} alt="">
+            </td>
+            <td class="border p-3">
+              <img style="height: 200px;" src={{i.pagec}} alt="">
+            </td>
+            <td class="border p-3">{{i.rating}}</td>
+            <td class="border p-3">
+              <button (click)="editPage(i._id)" class="btn btn-dark mt-5" ><i class="fa-regular fa-pen-to-square"></i></button>
+              <br>
+              <button (click)="deleteProduct(i._id)" class="btn btn-dark mt-5" ><i class="fa-solid fa-trash-can"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+</div>

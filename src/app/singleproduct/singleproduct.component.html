@@ -1,0 +1,53 @@
+<app-header></app-header>
+<div class="p-4" style="background-image: url(https://i.postimg.cc/yx9wy58X/dark-background-2-wallpaper-2560x1440.jpg); background-size: cover;">
+    <div class="container p-5" style="border: 3px black solid; border-radius: 25px; background-color: white;">
+
+        <div class="text-center">
+            <h1> TITLE : {{pdata.pname}} </h1>
+            <h1> RATING : {{pdata.rating}}/100 </h1>
+        </div>
+    <br>
+        <div class="w-85 text-center" style="padding-left: 0%; border-radius: 25%;">
+            <div id="carouselExample" class="carousel slide">
+                <div class="text-end p-3"> 
+                    <button class=" btn btn-dark p-2 ms-4" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <!-- <span class="carousel-control-prev-icon" aria-hidden="false"></span> -->
+                        <span style="color:white;">PREV</span>
+                    </button>
+                    <button class="btn btn-dark p-2 ms-4" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <!-- <span class="carousel-control-next-icon" aria-hidden="false"></span> -->
+                        <span style="color:white;">NEXT</span>
+                    </button>
+                   </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img style="border-radius: 25px;" src="{{pdata.pagea}}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img style="border-radius: 25px;" src="{{pdata.pageb}}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img style="border-radius: 25px;" src="{{pdata.pagec}}" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+               <div class="text-end p-3"> 
+                <button class=" btn btn-dark p-2 ms-4" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <!-- <span class="carousel-control-prev-icon" aria-hidden="false"></span> -->
+                    <span style="color:white;">PREV</span>
+                </button>
+                <button class="btn btn-dark p-2 ms-4" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <!-- <span class="carousel-control-next-icon" aria-hidden="false"></span> -->
+                    <span style="color:white;">NEXT</span>
+                </button>
+               </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center p-3">
+        <a href="#comic" class="btn btn-primary">BACK</a>
+    </div>
+
+</div>
+
+

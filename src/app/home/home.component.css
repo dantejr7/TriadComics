@@ -1,0 +1,8 @@
+#card{
+    height: 470px;
+}
+.card:hover {
+    box-shadow: 0 5px 10px 0 rgb(12, 12, 12);
+    transition: 0.3s;
+    transform: scale(1.05); /* Optional: Zoom in a bit on hover */
+  }

@@ -1,0 +1,60 @@
+<!-- header -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+    <div class="container px-5">
+        <a class="navbar-brand" href="#!"> <img style="height: 40%; width:40%;" src="https://i.postimg.cc/FHLtKNLx/triad-comics.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">HOME</a></li>
+                <li class="nav-item"><a class="nav-link" href="#comic">COMICS</a></li>
+                <li class="nav-item"><a class="nav-link" href="#exampleModal" data-bs-toggle="modal">ABOUT</a></li>
+            </ul>
+            <h1 style="color: black;">/</h1>            
+            <a href="admin-login"><i class="fa-solid fa-2x fa-gear" style="color: #eceff4;"></i></a>
+        </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel"> ABOUT US </h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <form class="text-center">
+                    <p> The Website is handled and maintained by A.Deva Nandan. </p>
+                    <p> Email : adevanandan18@gmail.com </p>
+                    <p> Contact : +91 8590763183 </p>
+                    <p> For more details and information contact us. </p>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</nav>
+<!-- login page  -->
+<div style="background-size: cover; background-image: url(https://i.postimg.cc/76L0DHJG/dark-gothic-lion-wallpaper-2560x1440.jpg);">
+    <div class=" p-4 rounded">
+        <h1 class="text-center mt-3" style="color: aliceblue;"> R E G I S T E R </h1>
+        <form [formGroup]="userRegisterForm" action="" class="p-5 bg-black rounded text-center mt-4 mb-4 container border" style="width: 50%;">
+            <input formControlName="email" name="email" id="em" placeholder="Enter Email" type="email" class="form-control mt-2"> <br>            
+            <div *ngIf="this.userRegisterForm.get('email')?.errors && this.userRegisterForm.get('email')?.touched">
+                <p class="text-danger"> Incorrect </p> </div>
+            <input formControlName="uname" name="user" id="u" placeholder="Enter Username" type="text" class="form-control mt-2"> <br>
+            <div *ngIf="this.userRegisterForm.get('uname')?.errors && this.userRegisterForm.get('uname')?.touched">
+                <p class="text-danger"> Incorrect </p> </div>
+            <input formControlName="propic" name="pic" id="pp" placeholder="Insert Profile Picture URL" type="text" class="form-control mt-2"> <br>
+            <div *ngIf="this.userRegisterForm.get('propic')?.errors && this.userRegisterForm.get('propic')?.touched">
+                <p class="text-danger"> Incorrect </p> </div>
+            <input formControlName="psw" name="psw" id="ps" placeholder="Enter Password" type="password" class="form-control mt-2"> <br>
+            <div *ngIf="this.userRegisterForm.get('psw')?.errors && this.userRegisterForm.get('psw')?.touched">
+                <p class="text-danger"> Incorrect </p> </div>
+            <button (click)="register()" [disabled]="userRegisterForm.invalid" class="btn btn-primary ms-1">REGISTER</button>
+            <div class="text-center text-white" style="padding-top: 5%;">
+                <p>Already have an account !! <a href="user-login">LOGIN</a> </p>
+            </div>
+        </form>
+    </div>
+</div>
+

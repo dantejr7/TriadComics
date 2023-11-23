@@ -1,0 +1,43 @@
+<app-header></app-header>
+
+<div style="background-image: url(https://i.postimg.cc/s2XJ5NjB/selective-wallpaper-3840x2160.jpg); background-size: cover; padding-bottom: 1%;">
+    <header class="py-5 bg-image-full" style="background-image: url('https://i.postimg.cc/wM9fgc4j/cropped-1920-1080-1324238.png/1600x900')">
+        <div class="text-center my-5">
+            <input [(ngModel)]="searchData" (keyup)="accessData($event)" type="text" class="form-control container" placeholder="SEARCH FOR COMICS">
+            <br>
+            <a href="#comic" class="btn btn-primary ms-1">SEARCH</a>
+        </div>
+    </header>
+    
+    <div class="container px-5 px-lg-5">
+        <!-- Heading Row-->
+        <div class="row gx-4 gx-lg-5 align-items-center my-5 rounded p-1 " style="background-color: rgba(0, 0, 0, 0.523);">
+            <div class="col-lg-7"><img class="img-fluid rounded mb-3 mb-lg-0" src="https://i.postimg.cc/zGHJHy9w/comics-got-cover.png" alt="..." /></div>
+            <div class="col-lg-5 text-white">
+                <h1 class="font-weight-light">Ghost of Tsushima</h1>
+                <p>The story follows the journey of a young samurai named Jin Sakai who became a ronin when mongols attacked his island of tsushima. Jin with the help of his friends try to take the fight back to the mongols who invaded their homes.</p>
+                <a class="btn btn-primary" href="#comic">View Comic</a>
+            </div>
+        </div>
+        <!-- Call to Action-->
+        <div class="card text-white bg-black my-5 py-4 text-center">
+            <div class="card-body"><p class="text-white m-0">Over 100 comics will soon be availabe on this website free to read for all viewers. More comics will be added shortly by our admin.</p></div>
+        </div>
+        <!-- Content Row-->
+        <div id="comic" class="container">
+            <div class="row mb-4">
+                <div *ngFor="let i of products | search:searchData:'pname'" class="col-lg-3 col-sm-7 mt-3 p-3 w-25">
+                    <div id="card" class="card card-hover text-white border p-2 text-center" style="width: 15rem; background-color:black; background-blend-mode: lighten;">
+                        <img style="height: 320px; width: 100%;" src="{{i.pagea}}" class="card-img-top p-3 border rounded" alt="...">
+                        <div class="card-body" style="height: 100%;">
+                            <h5 class="card-title">{{i.pname}}</h5>
+                            <div id="cb" style="position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%);">
+                                <a routerLink="product-view/{{i._id}}"  (click)="viewPage()" class="btn btn-primary">VIEW</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
